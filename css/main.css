@@ -10,21 +10,30 @@ a{
 li{
     list-style-type: none;
 }
+.logo{
+    padding: 7px;
+}
 nav{
     display: flex;
     justify-content: space-between;
-    background: linear-gradient(24deg, red,orange,red );
     color: white;
     padding: 20px;
+    background-color: rgba(0, 0, 0, 0.808);
+
 }
 .options{
     padding: 10px;
+}
+header{
+    background: url("../img/pic6.jpeg") no-repeat center center/cover;
+ 
+    background-color: rgba(0, 0, 0, 0.808);
 }
 .options a{
     padding: 20px;
     color: white;
     text-transform: uppercase;
-    font-weight: bold;
+
 }
 .options a:hover{
     background: rgb(184, 1, 1);
@@ -38,12 +47,21 @@ nav{
     font-weight: bolder;
     color: white;
     font-size: 1.6em;
+    padding: 7px;
 }
 .menu-close-btn{
     font-size: 2em;
     font-weight: bolder;
     color: white;
     display: none;
+    padding:10px;
+}
+.menu-close-btn:hover{
+    background-color: rgb(184, 1, 1);
+}
+.menu-open-btn:hover{
+    background-color: rgb(184, 1, 1);
+   
 }
 .mobile-nav-items{
     /* min-height: 100vh; */
@@ -51,7 +69,7 @@ nav{
     /* display: none; */
     justify-content: center;
     align-items: center;
-    background-color: rgb(199, 5, 5);
+    background-color: rgba(0, 0, 0, 0.671);
 }
 .mobile-nav-item{
     display: block;
@@ -67,12 +85,46 @@ nav{
 }
 .nav-items{
     display: none;
+    /* text-align: center; */
+}
+.home{
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgba(0, 0, 0, 0.808); */
+ 
+    
+}
+.welcome{
+    padding: 20px;
+    text-align: center;
+
+    height: 20vh;
+    border-radius: 20px;
+    color: white;
+    padding: 5%;
+    
+}
+.welcome-btn{
+    margin-top: 200px;
+    padding: 20px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    width: 50%;
+    transition: color 1.2s,background-color 1.2s,width 2s;
 }
 
+.welcome-btn:hover{
+    color: white;
+    background-color:rgba(255, 0, 0, 0.417);
+    width: 50px;
+}
 @media(max-width:800px){
     nav{
-        background: red;
         padding: 15px;
+        background-color: rgba(0, 0, 0, 0.671);
     }
    
     .options{
@@ -82,12 +134,17 @@ nav{
         display: block;
     }
     .nav-items{
+        transition: display 1.5s ;
+    }
+    .nav-items{
         display: none;
-        transition-delay: 4000ms;
-        transition: display 1.5s;
-        transition-timing-function: ease-in-out;
+        background-color: rgba(0, 0, 0, 0.671);
+        
     }
     .mobile-nav-items{
-        transition: height 1.5s;
+        transition: height 1.5s,width 2.5s;
+        background-color: rgba(0, 0, 0, 0.808);
+       
     }
 }
+
