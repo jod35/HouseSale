@@ -18,12 +18,22 @@
         <nav class="nav navbar">
             <div> House Sale</div>
             <div class="options">
-                <a href="{% url 'appl:home' %}">Home</a>
-                <a href="{% url 'appl:register' %}">Sign Up</a>
-                <a href="{% url 'appl:login' %}">Login</a>
-                <a href="">Houses</a>
-                <a href="">Ware Houses</a>
-                <a href="">Land</a>
+                
+                {% if user.is_authenticated %}
+                    
+                    <a href="{% url 'appl:logout' %}">Log Out</a>
+                    <a href="">Houses</a>
+                    <a href="">Ware Houses</a>
+                    <a href="">Land</a>
+                {% else %}
+                    <a href="{% url 'appl:home' %}">Home</a>
+                    <a href="{% url 'appl:register' %}">Sign Up</a>
+                    <a href="{% url 'appl:login' %}">Login</a>
+                    <a href="">Houses</a>
+                    <a href="">Ware Houses</a>
+                    <a href="">Land</a>
+                {% endif %}
+                    
             </div>
             <div class="mobile-nav">
                 <a href="#" class="menu-open-btn">&#9776;</a>
@@ -42,7 +52,7 @@
         </div>
         
    </header>
-   <main>
+   <main class="main">
        
        {% if messages %}
            {% for message in message %}

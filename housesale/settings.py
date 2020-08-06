@@ -125,3 +125,9 @@ STATICFILES_DIRS=(os.path.join(BASE_DIR,'static'),)
 
 #crispy forms settings
 CRISPY_TEMPLATE_PACK='bootstrap4'
+
+#login settings
+LOGIN_URL='/login/'
+LOGIN_REDIRECT_URL='/'
+
+LOGOUT_URL='/logout/'
