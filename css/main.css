@@ -21,13 +21,16 @@ nav{
     background-color: rgba(0, 0, 0, 0.808);
 
 }
+.red-text{
+    color: red;
+}
 .options{
     padding: 10px;
 }
 header{
-    background: url("../img/pic6.jpeg") no-repeat center center/cover;
+    background: url("../img/pic1.webp") no-repeat center center/cover;
  
-    background-color: rgba(0, 0, 0, 0.808);
+    /* background-color: rgba(0, 0, 0, 0.808);  */
 }
 .options a{
     padding: 20px;
@@ -80,7 +83,7 @@ header{
     font-weight: bolder;
 }
 .mobile-nav-item:hover{
-  background-color: rgb(184, 1, 1);
+  background-color:rgba(255, 0, 0, 0.417);
   color: rgba(255, 255, 255);
 }
 .nav-items{
@@ -92,14 +95,12 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: rgba(0, 0, 0, 0.808); */
  
     
 }
 .welcome{
     padding: 20px;
     text-align: center;
-
     height: 20vh;
     border-radius: 20px;
     color: white;
@@ -112,14 +113,80 @@ header{
     background-color: red;
     color: white;
     font-weight: bold;
-    width: 50%;
-    transition: color 1.2s,background-color 1.2s,width 2s;
+    transition: color 1.2s,background-color 1.2s,padding 1.22s;
 }
 
 .welcome-btn:hover{
     color: white;
     background-color:rgba(255, 0, 0, 0.417);
     width: 50px;
+    padding: 25px;
+}
+.container{
+    padding-top: 5%;
+    min-height: 80vh;
+    /* background-color: rgba(0, 0, 0, 0.404); */
+    
+}
+.showcase{
+    display: flex;
+    /* padding: 2%; */
+}
+.card{
+    background-color: rgba(0, 0, 0, 0.808);
+    color: white;
+    margin: 30px;
+    height: 400px;
+    box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.287);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+}
+
+.card-img-container{
+    height: 200px;
+    
+}
+.card-descr{
+    padding: 20px;
+}
+.card-img{
+    width: 100%;
+    height: 200px;
+}
+.card-section{
+    margin-top: 30px;
+}
+.card-btn{
+    color: white;
+    padding: 20px;
+    background-color: red;
+    transition: color 1.2s, background-color 1.5s,padding-right 1.6s;
+    text-transform: uppercase;
+}
+.card-btn:hover{
+    color: white;
+    background-color: rgba(255, 0, 0, 0.417);
+    padding-right: 30px;
+}
+.text-center{
+    text-align: center;
+}
+footer{
+    background-color: rgba(0, 0, 0, 0.808);
+    min-height: 50vh;
+    color: white;
+    padding-top: 2%;
+}
+.footer-cols{
+    display: grid;
+    grid-template-columns: 40% 80%;
+}
+.footer-links a{
+    display: block;
+    padding: 20px;
+    color: white;
+    text-transform: uppercase;
 }
 @media(max-width:800px){
     nav{
@@ -139,12 +206,19 @@ header{
     .nav-items{
         display: none;
         background-color: rgba(0, 0, 0, 0.671);
+        transition: height 1.2s;
         
     }
     .mobile-nav-items{
         transition: height 1.5s,width 2.5s;
         background-color: rgba(0, 0, 0, 0.808);
        
+    }
+    .showcase{
+        display: block;
+    }
+    .card{
+        width: 80%;
     }
 }
 

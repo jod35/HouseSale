@@ -9,9 +9,10 @@ menu_open_button.addEventListener('click',displayMobileNav);
 function displayMobileNav(){
     menu_open_button.style.display="none";
     mobile_links.style.width="100vw";
-    mobile_menu.style.height="100vh";
+    mobile_menu.style.height="80vh";
     
     mobile_links.style.display="block";
+    mobile_links.style.height="100%";
     menu_close_button.style.display="block";
 }
 
@@ -21,7 +22,9 @@ menu_close_button.addEventListener('click',closeMobileNav);
 function closeMobileNav(){
     menu_close_button.style.display="none";
     // mobile_menu.style.display="none";
+    mobile_links.style.height="0";
     mobile_links.style.display="none";
+
     mobile_menu.style.height="0vh";
     mobile_menu.style.width="0vh";
 
