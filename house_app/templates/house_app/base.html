@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'house_app/css/main.css' %}">
     <link rel="stylesheet" href="{% static 'house_app/css/bootstrap.min.css' %}">
-    
     {% if title %}
         <title>House Sale |{{title}}</title>
     {% else %}
@@ -15,7 +14,6 @@
         
 </head>
 <body>
-    
    <header>
         <nav class="nav navbar">
             <div> House Sale</div>
@@ -53,7 +51,6 @@
                </center>
            {% endfor %}
        {% endif %}
-           
        {% block body %}
            
        {% endblock body %}  
