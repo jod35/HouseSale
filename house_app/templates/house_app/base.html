@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'house_app/css/main.css' %}">
+    
+    {% if title %}
+        <title>House Sale |{{title}}</title>
+    {% else %}
+        <title>House Sale</title>
+    {% endif %}
+        
+</head>
+<body>
+    
+   <header>
+        <nav>
+            <div> <h1 class="logo">House Sale</h1></div>
+            <div class="options">
+                <a href="">Sign Up</a>
+                <a href="">Login</a>
+                <a href="">Houses</a>
+                <a href="">Ware Houses</a>
+                <a href="">Land</a>
+            </div>
+            <div class="mobile-nav">
+                <a href="#" class="menu-open-btn">&#9776;</a>
+                <a href="#" class="menu-close-btn">&times;</a>
+            </div>
+        </nav>
+        <div class="mobile-nav-items">
+            <div class="nav-items">
+                <a href="" class="mobile-nav-item">Home</a>
+                <a href="" class="mobile-nav-item">Sign Up</a>
+                <a href="" class="mobile-nav-item">Login</a>
+                <a href="" class="mobile-nav-item">Houses</a>
+                <a href="" class="mobile-nav-item">WareHouses</a>
+                <a href="" class="mobile-nav-item">Land</a>
+            </div>
+        </div>
+        
+   </header>
+   <main>
+       {% block body %}
+           
+       {% endblock body %}  
+   </main>
+    <footer>
+        <div class="footer-cols">
+            <div class="logo">
+                House Sale
+            </div>
+            <div class="footer-links">
+                <a href="">Sign Up</a>
+                <a href="">Login</a>
+                <a href="">Houses</a>
+                <a href="">Ware Houses</a>
+                <a href="">Land</a>
+            </div>
+        </div>
+        
+    </footer>
+    <script src="{% static 'house_app/js/index.js' %}"></script>
+</body>
+</html>

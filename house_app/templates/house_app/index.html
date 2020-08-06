@@ -1,0 +1,58 @@
+{% extends 'house_app/base.html' %}
+{% load static %}
+{% block body %}
+<div class="home">
+    <div class="welcome">
+        <h1>Sale Or Rent A House Today</h1>
+        <br><br>
+        <a href="" class="welcome-btn">Get Started</a>
+    </div>
+</div>
+<div class="container">
+    <center>
+        <h2 class="red-text">We bring you near to:</h2>
+    </center>
+    <div class="showcase">
+        <div class="card">
+            <div class="card-img-container">
+                <img src="{% static 'house_app/img/pic1.webp' %}" alt="" class="card-img">
+            </div>
+            <div class="card-descr">
+                <h3>Houses</h3>
+                Lorem ipsum dolor sit amet.
+                <div class="card-section">
+                    <a href="" class="card-btn">More</a>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card">
+            <div class="card-img-container">
+                <img src="{% static 'house_app/img/pic5.jpeg' %}" alt="" class="card-img">
+            </div>
+            <div class="card-descr">
+                <h3>WareHouses</h3>
+                Lorem ipsum dolor sit amet.
+                <div class="card-section">
+                    <a href="" class="card-btn">More</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img-container">
+                <img src="{% static 'house_app/img/p8.jpeg' %}" alt="" class="card-img">
+            </div>
+            <div class="card-descr">
+                <h3>Land</h3>
+                Lorem ipsum dolor sit amet.
+                
+                <div class="card-section">
+                    <a href="" class="card-btn">More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</main>
+{% endblock body %}
+    

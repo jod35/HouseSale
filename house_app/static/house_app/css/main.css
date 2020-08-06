@@ -95,6 +95,9 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    background: url("../img/pic1.webp") no-repeat center center/cover;
+    
+
  
     
 }
