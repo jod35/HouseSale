@@ -1,0 +1,262 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+a{
+    text-decoration: none;
+
+}
+a:hover{
+    text-decoration: none;
+}
+li{
+    list-style-type: none;
+}
+.logo{
+    padding: 7px;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.808);
+
+}
+.red-text{
+    color: red;
+}
+.main{
+    min-height: 100vh;
+}
+.options{
+    padding: 10px;
+}
+header{
+    background: url("../img/pic1.webp") no-repeat center center/cover;
+ 
+    /* background-color: rgba(0, 0, 0, 0.808);  */
+}
+.options a{
+    padding: 20px;
+    color: white;
+    text-transform: uppercase;
+
+}
+.options a:hover{
+    background: rgb(184, 1, 1);
+    color: white;
+    text-decoration: none;
+}
+.mobile-nav{
+    display: none;
+    padding: 10px;
+}
+.menu-open-btn{
+    font-size: larger;
+    font-weight: bolder;
+    color: white;
+    font-size: 1.6em;
+    padding: 7px;
+    text-decoration: none;
+}
+.menu-close-btn{
+    font-size: 2em;
+    font-weight: bolder;
+    color: white;
+    display: none;
+    text-decoration: none;
+    padding:10px;
+}
+.menu-close-btn:hover{
+    background-color: rgb(184, 1, 1);
+    color: white;
+    text-decoration: none;
+}
+.menu-open-btn:hover{
+    background-color: rgb(184, 1, 1);
+    color: white;
+    text-decoration: none;
+   
+}
+.mobile-nav-items{
+    /* min-height: 100vh; */
+    height: 0;
+    /* display: none; */
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.671);
+}
+.mobile-nav-item{
+    display: block;
+    width: 100%;
+    padding: 20px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bolder;
+}
+.mobile-nav-item:hover{
+  background-color:rgba(255, 0, 0, 0.417);
+  color: rgba(255, 255, 255);
+  text-decoration: none;
+}
+.nav-items{
+    display: none;
+    /* text-align: center; */
+}
+.home{
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../img/pic1.webp") no-repeat center center/cover;
+    
+
+ 
+    
+}
+.welcome{
+    padding: 20px;
+    text-align: center;
+    height: 20vh;
+    border-radius: 20px;
+    color: white;
+    padding: 5%;
+    
+}
+.welcome-btn{
+    margin-top: 200px;
+    padding: 20px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    transition: color 1.2s,background-color 1.2s,padding 1.22s;
+    text-decoration: none;
+}
+
+.welcome-btn:hover{
+    color: white;
+    background-color:rgba(90, 6, 6, 0.561);
+    width: 50px;
+    padding: 25px;
+    text-decoration: none;
+}
+.show-container{
+    padding-top: 5%;
+    min-height: 80vh;
+    /* background-color: rgba(0, 0, 0, 0.404); */
+    
+}
+.showcase{
+    display: flex;
+    /* padding: 2%; */
+}
+.card{
+    background-color: rgba(0, 0, 0, 0.808);
+    
+    margin: 30px;
+    height: 400px;
+    box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.287);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+}
+
+.card-img-container{
+    height: 200px;
+    
+}
+.card-descr{
+    padding: 20px;
+}
+.card-img{
+    width: 100%;
+    height: 200px;
+}
+.card-section{
+    margin-top: 30px;
+}
+.card-btn{
+    color: white;
+    padding: 20px;
+    background-color: red;
+    transition: color 1.2s, background-color 1.5s,padding-right 1.6s;
+    text-transform: uppercase;
+}
+.card-btn:hover{
+    color: white;
+    background-color: rgba(255, 0, 0, 0.417);
+    padding-right: 30px;
+    text-decoration: none;
+    color: white;
+}
+.text-center{
+    text-align: center;
+}
+footer{
+    background-color: rgba(0, 0, 0, 0.808);
+    min-height: 50vh;
+    color: white;
+    padding-top: 2%;
+}
+.footer-cols{
+    display: grid;
+    grid-template-columns: 40% 80%;
+}
+.footer-links a{
+    display: block;
+    padding: 20px;
+    color: white;
+    text-transform: uppercase;
+}
+.form{
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+.form input{
+    border: none;
+    border-bottom: 2px solid red;
+}
+.form-btn{
+    padding: 20px;
+    background-color: red;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+@media(max-width:800px){
+    nav{
+        padding: 15px;
+        background-color: rgba(0, 0, 0, 0.671);
+    }
+   
+    .options{
+        display: none;
+    }
+    .mobile-nav{
+        display: block;
+    }
+    .nav-items{
+        transition: display 1.5s ;
+    }
+    .nav-items{
+        display: none;
+        background-color: rgba(0, 0, 0, 0.671);
+        transition: height 1.2s;
+        
+    }
+    .mobile-nav-items{
+        transition: height 1.5s,width 2.5s;
+        background-color: rgba(0, 0, 0, 0.808);
+       
+    }
+    .showcase{
+        display: block;
+    }
+    .card{
+        width: 80%;
+    }
+}
+
