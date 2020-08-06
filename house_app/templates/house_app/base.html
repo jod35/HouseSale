@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'house_app/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'house_app/css/bootstrap.min.css' %}">
     
     {% if title %}
         <title>House Sale |{{title}}</title>
@@ -16,11 +17,12 @@
 <body>
     
    <header>
-        <nav>
-            <div> <h1 class="logo">House Sale</h1></div>
+        <nav class="nav navbar">
+            <div> House Sale</div>
             <div class="options">
-                <a href="">Sign Up</a>
-                <a href="">Login</a>
+                <a href="{% url 'appl:home' %}">Home</a>
+                <a href="{% url 'appl:register' %}">Sign Up</a>
+                <a href="{% url 'appl:login' %}">Login</a>
                 <a href="">Houses</a>
                 <a href="">Ware Houses</a>
                 <a href="">Land</a>
@@ -32,9 +34,9 @@
         </nav>
         <div class="mobile-nav-items">
             <div class="nav-items">
-                <a href="" class="mobile-nav-item">Home</a>
-                <a href="" class="mobile-nav-item">Sign Up</a>
-                <a href="" class="mobile-nav-item">Login</a>
+                <a href="{% url 'appl:home' %}" class="mobile-nav-item">Home</a>
+                <a href="{% url 'appl:register' %}" class="mobile-nav-item">Sign Up</a>
+                <a href="{% url 'appl:login' %}" class="mobile-nav-item">Login</a>
                 <a href="" class="mobile-nav-item">Houses</a>
                 <a href="" class="mobile-nav-item">WareHouses</a>
                 <a href="" class="mobile-nav-item">Land</a>
@@ -43,6 +45,15 @@
         
    </header>
    <main>
+       
+       {% if messages %}
+           {% for message in message %}
+               <center>
+                    <p class="red-text">{{message}}</p>
+               </center>
+           {% endfor %}
+       {% endif %}
+           
        {% block body %}
            
        {% endblock body %}  

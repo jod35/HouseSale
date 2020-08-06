@@ -7,6 +7,9 @@ a{
     text-decoration: none;
 
 }
+a:hover{
+    text-decoration: none;
+}
 li{
     list-style-type: none;
 }
@@ -40,6 +43,8 @@ header{
 }
 .options a:hover{
     background: rgb(184, 1, 1);
+    color: white;
+    text-decoration: none;
 }
 .mobile-nav{
     display: none;
@@ -51,19 +56,25 @@ header{
     color: white;
     font-size: 1.6em;
     padding: 7px;
+    text-decoration: none;
 }
 .menu-close-btn{
     font-size: 2em;
     font-weight: bolder;
     color: white;
     display: none;
+    text-decoration: none;
     padding:10px;
 }
 .menu-close-btn:hover{
     background-color: rgb(184, 1, 1);
+    color: white;
+    text-decoration: none;
 }
 .menu-open-btn:hover{
     background-color: rgb(184, 1, 1);
+    color: white;
+    text-decoration: none;
    
 }
 .mobile-nav-items{
@@ -85,6 +96,7 @@ header{
 .mobile-nav-item:hover{
   background-color:rgba(255, 0, 0, 0.417);
   color: rgba(255, 255, 255);
+  text-decoration: none;
 }
 .nav-items{
     display: none;
@@ -117,15 +129,17 @@ header{
     color: white;
     font-weight: bold;
     transition: color 1.2s,background-color 1.2s,padding 1.22s;
+    text-decoration: none;
 }
 
 .welcome-btn:hover{
     color: white;
-    background-color:rgba(255, 0, 0, 0.417);
+    background-color:rgba(90, 6, 6, 0.561);
     width: 50px;
     padding: 25px;
+    text-decoration: none;
 }
-.container{
+.show-container{
     padding-top: 5%;
     min-height: 80vh;
     /* background-color: rgba(0, 0, 0, 0.404); */
@@ -137,7 +151,7 @@ header{
 }
 .card{
     background-color: rgba(0, 0, 0, 0.808);
-    color: white;
+    
     margin: 30px;
     height: 400px;
     box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.287);
@@ -171,6 +185,8 @@ header{
     color: white;
     background-color: rgba(255, 0, 0, 0.417);
     padding-right: 30px;
+    text-decoration: none;
+    color: white;
 }
 .text-center{
     text-align: center;
@@ -190,6 +206,22 @@ footer{
     padding: 20px;
     color: white;
     text-transform: uppercase;
+}
+.form{
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+.form input{
+    border: none;
+    border-bottom: 2px solid red;
+}
+.form-btn{
+    padding: 20px;
+    background-color: red;
+    border: none;
+    cursor: pointer;
+    color: white;
 }
 @media(max-width:800px){
     nav{
