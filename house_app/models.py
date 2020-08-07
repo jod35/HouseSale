@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils import timezone
 
 # Create your models here.
 class House(models.Model):
@@ -13,6 +14,8 @@ class House(models.Model):
     swimming_pool=models.BooleanField()
     image1=models.ImageField(upload_to='houses',default='default.jpg')
     dealer=models.ForeignKey(User,on_delete=models.CASCADE)
+    date_added=models.DateField(auto_now=True)
+
         
 
     def format_price(self):
@@ -25,6 +28,7 @@ class WareHouse(models.Model):
     price=models.IntegerField()
     dealer=models.ForeignKey(User,on_delete=models.CASCADE)
     space=models.IntegerField()
+    date_added=models.DateField(auto_now=True)
     
     
 
@@ -38,6 +42,7 @@ class Land(models.Model):
     name=models.TextField()
     dealer=models.ForeignKey(User,on_delete=models.CASCADE)
     space=models.IntegerField()
+    date_added=models.DateField(auto_now=True)
     
     
 
