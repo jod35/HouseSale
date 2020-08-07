@@ -16,11 +16,10 @@
 <body>
    <header>
         <nav class="nav navbar">
-            <div> House Sale</div>
+            <div><a href="{% url 'appl:home' %}" class="logo">HouseSale</a></div>
             <div class="options">
                 
                 {% if user.is_authenticated %}
-                    
                     <a href="{% url 'appl:logout' %}">Log Out</a>
                     <a href="">Houses</a>
                     <a href="">Ware Houses</a>
@@ -42,12 +41,21 @@
         </nav>
         <div class="mobile-nav-items">
             <div class="nav-items">
-                <a href="{% url 'appl:home' %}" class="mobile-nav-item">Home</a>
-                <a href="{% url 'appl:register' %}" class="mobile-nav-item">Sign Up</a>
-                <a href="{% url 'appl:login' %}" class="mobile-nav-item">Login</a>
-                <a href="" class="mobile-nav-item">Houses</a>
-                <a href="" class="mobile-nav-item">WareHouses</a>
-                <a href="" class="mobile-nav-item">Land</a>
+               
+               {% if user.is_authenticated %}
+                    <a href="" class="mobile-nav-item">Houses</a>
+                    <a href="" class="mobile-nav-item">WareHouses</a>
+                    <a href="" class="mobile-nav-item">Land</a>
+                    <a href="{% url 'appl:logout' %}" class="mobile-nav-item">Log Out</a>
+                {% else %}
+                    <a href="{% url 'appl:home' %}" class="mobile-nav-item">Home</a>
+                    <a href="{% url 'appl:register' %}" class="mobile-nav-item">Sign Up</a>
+                    <a href="{% url 'appl:login' %}" class="mobile-nav-item">Login</a>
+                    <a href="" class="mobile-nav-item">Houses</a>
+                    <a href="" class="mobile-nav-item">WareHouses</a>
+                    <a href="" class="mobile-nav-item">Land</a>
+               {% endif %}
+                   
             </div>
         </div>
         

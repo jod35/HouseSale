@@ -28,7 +28,7 @@ nav{
     color: red;
 }
 .main{
-    min-height: 100vh;
+    min-height: 80vh;
 }
 .options{
     padding: 10px;
@@ -145,8 +145,9 @@ header{
 .show-container{
     padding-top: 5%;
     min-height: 80vh;
-    /* background-color: rgba(0, 0, 0, 0.404); */
-    
+}
+.log-out{
+    padding: 20%;
 }
 .showcase{
     display: flex;
@@ -154,7 +155,6 @@ header{
 }
 .card{
     background-color: rgba(0, 0, 0, 0.808);
-    
     margin: 30px;
     height: 400px;
     box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.287);
@@ -202,7 +202,7 @@ footer{
 }
 .footer-cols{
     display: grid;
-    grid-template-columns: 40% 80%;
+    grid-template-columns: 50% 50%;
 }
 .footer-links a{
     display: block;
@@ -225,6 +225,17 @@ footer{
     border: none;
     cursor: pointer;
     color: white;
+    border-radius: 30px;
+    width: 20%;
+}
+.logo{
+    color:white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.logo:hover{
+    color: red;
+    text-decoration: none;
 }
 @media(max-width:800px){
     nav{
