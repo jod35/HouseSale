@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .forms import RegistrationForm
 from django.contrib import messages
+from django.views.generic import CreateView
 
 # Create your views here.
 
@@ -26,5 +27,3 @@ def create_account(request):
     return render(request,'house_app/signup.html',context)
 
 
-def login(request):
-    return render(request,'house_app/login.html')
