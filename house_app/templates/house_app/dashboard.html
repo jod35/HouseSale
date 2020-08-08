@@ -1,6 +1,15 @@
 {% extends 'house_app/base.html' %}
 {% block body %}
     <div class="dashboard">
+            
+            {% if messages %}
+                
+                {% for message in messages %}
+                    <li class="alert alert-{{message.tags}}">{{ message }}</li>
+                {% endfor %}
+                    
+            {% endif %}
+                
             <div class="dash-welcome">
                 <p class="red-text">Welcome {{request.user}}!!</p>
             </div>

@@ -46,6 +46,18 @@ def create_house(request):
     form=HouseCreationForm()
     if request.method == 'POST':
         form=HouseCreationForm(request.POST,request.FILES)
+
+        if form.is_valid():
+            obj=form.save(commit=False)
+
+            obj.dealer=request.user
+
+            obj.save()
+
+            messages.success(request,"House has been created successfully")
+
+            return redirect('/dashboard/')
+            
     context={
         'form':form
     }
