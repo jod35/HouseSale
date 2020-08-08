@@ -1,0 +1,26 @@
+{% extends 'house_app/base.html' %}
+{% block body %}
+    <div class="dashboard">
+            <div class="dash-welcome">
+                <p class="red-text">Welcome {{request.user}}!!</p>
+            </div>
+            <div class="dash-container">
+                <a href="{% url 'appl:create_house' %}" class="dash-link">&plus; Add house</a>
+                <a href="" class="dash-link">&#4967; View houses ({{houses.count}})</a>
+                
+            </div>
+            <br>
+            <div class="dash-container">
+                <a href="" class="dash-link">&plus; Add A warehouse</a>
+                <a href="" class="dash-link">&#4967; View warehouse ({{warehouses.count}})</a>
+            </div>
+            <br>
+            <div class="dash-container">
+                <a href="" class="dash-link">&plus; Add land</a>
+                
+                <a href="" class="dash-link">&#4967; View Land ({{land.count}})</a>
+            </div>
+            
+    </div>
+{% endblock body %}
+    

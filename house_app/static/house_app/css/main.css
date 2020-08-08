@@ -237,6 +237,33 @@ footer{
     color: red;
     text-decoration: none;
 }
+
+.dashboard{
+    padding: 5%;
+}
+.dash-container{
+    background-color: rgba(0, 0, 0, 0.808);
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.246);
+    border-radius: 5px;
+}
+.dash-link{
+    color: rgb(218, 204, 204);
+    padding: 20px;
+    font-size: 2em;
+    width: 100%;
+    transition: color 0.5s, background-color 1.8s;
+}
+.dash-welcome{
+    font-size: 2em;
+}
+.dash-link:hover{
+    color: white;
+    text-decoration: none;
+    background-color: rgb(184, 1, 1);
+}
 @media(max-width:800px){
     nav{
         padding: 15px;

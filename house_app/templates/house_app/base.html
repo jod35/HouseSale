@@ -16,14 +16,20 @@
 <body>
    <header>
         <nav class="nav navbar">
-            <div><a href="{% url 'appl:home' %}" class="logo">HouseSale</a></div>
+           
+           {% if user.is_authenticated %}
+                <div><a href="{% url 'appl:user_dashboard' %}" class="logo">HouseSale</a></div>
+           {% else %}
+                <div><a href="{% url 'appl:home' %}" class="logo">HouseSale</a></div>
+           {% endif %}
+               
             <div class="options">
                 
                 {% if user.is_authenticated %}
-                    <a href="">Dashboard</a>
-                    <a href="{% url 'appl:create_house' %}">ADD House</a>
-                    <a href="">ADD Ware House</a>
-                    <a href="">ADD Land</a>
+                    <a href="{% url 'appl:user_dashboard' %}">Dashboard</a>
+                    <a href="{% url 'appl:create_house' %}">Houses</a>
+                    <a href="">Ware Houses</a>
+                    <a href="">Land</a>
                     <a href="{% url 'appl:logout' %}">Log Out</a>
                 {% else %}
                     <a href="{% url 'appl:home' %}">Home</a>

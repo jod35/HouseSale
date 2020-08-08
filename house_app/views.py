@@ -27,6 +27,17 @@ def create_account(request):
     }
     return render(request,'house_app/signup.html',context)
 
+#dashboard_view
+def user_dashboard(request):
+    houses=House.objects.order_by('-id').all()
+    warehouses=WareHouse.objects.order_by('-id').all()
+    land=Land.objects.order_by('-id').all
+    context={
+        'houses':houses,
+        'warehouses':warehouses,
+        'land':land
+    }
+    return render(request,'house_app/dashboard.html',context)
 
 #view for creating a house
 class HouseCreationView(CreateView):
