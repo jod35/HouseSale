@@ -225,8 +225,8 @@ footer{
     border: none;
     cursor: pointer;
     color: white;
-    border-radius: 30px;
-    width: 20%;
+    /* border-radius: 10px; */
+    width: 200px;
 }
 .logo{
     color:white;

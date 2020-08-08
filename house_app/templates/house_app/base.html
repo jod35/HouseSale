@@ -20,10 +20,11 @@
             <div class="options">
                 
                 {% if user.is_authenticated %}
+                    <a href="">Dashboard</a>
+                    <a href="{% url 'appl:create_house' %}">ADD House</a>
+                    <a href="">ADD Ware House</a>
+                    <a href="">ADD Land</a>
                     <a href="{% url 'appl:logout' %}">Log Out</a>
-                    <a href="">Houses</a>
-                    <a href="">Ware Houses</a>
-                    <a href="">Land</a>
                 {% else %}
                     <a href="{% url 'appl:home' %}">Home</a>
                     <a href="{% url 'appl:register' %}">Sign Up</a>
