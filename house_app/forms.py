@@ -21,10 +21,10 @@ class HouseCreationForm(forms.ModelForm):
 class LandCreationForm(forms.ModelForm):
     class Meta:
         model=Land
-        fields=['location','space','price']
+        fields=['location','space','price','image1']
 
 
 class WareHouseCreationForm(forms.ModelForm):
     class Meta:
         model=WareHouse
-        fields=['name','location','price','space']
+        fields=['name','location','price','space','image1']

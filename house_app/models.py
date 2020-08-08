@@ -29,7 +29,7 @@ class WareHouse(models.Model):
     dealer=models.ForeignKey(User,on_delete=models.CASCADE)
     space=models.IntegerField()
     date_added=models.DateField(auto_now=True)
-    
+    image1=models.ImageField(upload_to='warehouses',default='default.jpg')
     
 
     def format_price(self):
@@ -43,6 +43,7 @@ class Land(models.Model):
     dealer=models.ForeignKey(User,on_delete=models.CASCADE)
     space=models.IntegerField()
     date_added=models.DateField(auto_now=True)
+    image1=models.ImageField(upload_to='land',default='default.jpg')
     
     
 
