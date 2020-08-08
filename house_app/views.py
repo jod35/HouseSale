@@ -40,8 +40,19 @@ def user_dashboard(request):
     return render(request,'house_app/dashboard.html',context)
 
 #view for creating a house
-class HouseCreationView(CreateView):
-    model=House
-    fields=['name','price','location','bedrooms','bathrooms','toilets','image1']
-    template_name='house_app/addhouse.html'
-    success_url=''
+
+def create_house(request):
+    context={
+
+    }
+    return render(request,'house_app/addhouse.html',context)
+
+
+#view for creating a warehouse
+def create_warehouse(request):
+    return render(request,'house_app/addwarehouse.html',context)
+
+
+
+    
+
