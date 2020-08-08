@@ -1,0 +1,34 @@
+{% extends 'house_app/base.html' %}
+{% block body %}
+    <div class="container">
+        <h1 class="red-text">{{request.user}} |House Admin</h1>
+        <a href="{% url 'appl:create_house' %}" class="add-btn">&plus; Add House</a>
+        <hr>
+        <h2 class="red-text">Recently Added Houses</h2>
+        <table class="table table-striped table-responsive">
+            <thead class="bg-red">
+                <th>Description</th>
+                <th>Location </th>
+                <th>Price (UGX)</th>
+                <th>bedrooms</th>
+                <th>Bathrooms</th>
+                <th>Toilets</th>
+            </thead>
+            <tbody>
+                
+                {% for house in houses %}
+                    <tr>
+                        <td>{{house.name}}</td>
+                        <td>{{house.location}}</td>
+                        <td>{{house.format_price}}</td>
+                        <td>{{house.bedrooms}}</td>
+                        <td>{{house.bathrooms}}</td>
+                        <td>{{house.toilets}}</td>
+                    </tr>                    
+                {% endfor %}
+                    
+            </tbody>
+        </table>
+    </div>
+{% endblock body %}
+    

@@ -1,14 +1,14 @@
 from django.shortcuts import render,redirect
 from .forms import RegistrationForm
 from django.contrib import messages
-from django.views.generic import CreateView
+from django.views.generic import CreateView,ListView,UpdateView
 from .models import House, WareHouse,Land
 from .forms import LandCreationForm,WareHouseCreationForm,HouseCreationForm
 
 # Create your views here.
 
 def index(request):
-    return render(request,'house_app/index.html')
+    return render(request,'house_app/index.html',context={'title':"Welcome to HouseSale"})
 
 
 def create_account(request):
@@ -24,7 +24,8 @@ def create_account(request):
 
         
     context={
-        'form':form
+        'form':form,
+        'title':'Create Your Account'
     }
     return render(request,'house_app/signup.html',context)
 
@@ -36,7 +37,8 @@ def user_dashboard(request):
     context={
         'houses':houses,
         'warehouses':warehouses,
-        'land':land
+        'land':land,
+        'title':'User Dashboard'
     }
     return render(request,'house_app/dashboard.html',context)
 
@@ -57,13 +59,21 @@ def create_house(request):
             messages.success(request,"House has been created successfully")
 
             return redirect('/dashboard/')
-            
+
     context={
-        'form':form
+        'form':form,
+        'title':"Create A House"
     }
     return render(request,'house_app/addhouse.html',context)
 
-
+#view for showing houses
+def house_admin(request):
+    houses=House.objects.filter(dealer=request.user).all()
+    context={
+        'title':"House Admin",
+        'houses':houses
+    }
+    return render(request,'house_app/houses.html',context)
 #view for creating a warehouse
 def create_warehouse(request):
     form=WareHouseCreationForm()

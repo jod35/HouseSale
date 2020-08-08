@@ -27,7 +27,7 @@
                 
                 {% if user.is_authenticated %}
                     <a href="{% url 'appl:user_dashboard' %}">Dashboard</a>
-                    <a href="{% url 'appl:create_house' %}">Houses</a>
+                    <a href="{% url 'appl:view_houses' %}">Houses</a>
                     <a href="">Ware Houses</a>
                     <a href="">Land</a>
                     <a href="{% url 'appl:logout' %}">Log Out</a>
@@ -50,7 +50,7 @@
             <div class="nav-items">
                
                {% if user.is_authenticated %}
-                    <a href="" class="mobile-nav-item">Houses</a>
+                    <a href="{% url 'appl:view_houses' %}" class="mobile-nav-item">Houses</a>
                     <a href="" class="mobile-nav-item">WareHouses</a>
                     <a href="" class="mobile-nav-item">Land</a>
                     <a href="{% url 'appl:logout' %}" class="mobile-nav-item">Log Out</a>
