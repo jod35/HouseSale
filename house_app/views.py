@@ -3,6 +3,7 @@ from .forms import RegistrationForm
 from django.contrib import messages
 from django.views.generic import CreateView
 from .models import House, WareHouse,Land
+from .forms import LandCreationForm,WareHouseCreationForm,HouseCreationForm
 
 # Create your views here.
 
@@ -42,17 +43,29 @@ def user_dashboard(request):
 #view for creating a house
 
 def create_house(request):
+    form=HouseCreationForm()
     context={
-
+        'form':form
     }
     return render(request,'house_app/addhouse.html',context)
 
 
 #view for creating a warehouse
 def create_warehouse(request):
+    form=WareHouseCreationForm()
+    context={
+        'form':form
+    }
     return render(request,'house_app/addwarehouse.html',context)
 
 
+#view for creating a land deal
+def create_land(request):
+    form=LandCreationForm()
+    context={
+        'form':form
+    }
 
+    return render(request,'house_app/addland.html',context)
     
 

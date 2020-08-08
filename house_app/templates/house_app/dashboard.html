@@ -11,12 +11,12 @@
             </div>
             <br>
             <div class="dash-container">
-                <a href="" class="dash-link">&plus; Add A warehouse</a>
+                <a href="{% url 'appl:create_warehouse' %}" class="dash-link">&plus; Add A warehouse</a>
                 <a href="" class="dash-link">&#4967; View warehouse ({{warehouses.count}})</a>
             </div>
             <br>
             <div class="dash-container">
-                <a href="" class="dash-link">&plus; Add land</a>
+                <a href="{% url 'appl:create_land' %}" class="dash-link">&plus; Add land</a>
                 
                 <a href="" class="dash-link">&#4967; View Land ({{land.count}})</a>
             </div>

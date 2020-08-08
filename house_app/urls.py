@@ -9,6 +9,8 @@ urlpatterns = [
     path('signup/',views.create_account,name='register'),
     path('login/',auth_views.LoginView.as_view(template_name='house_app/login.html'),name='login'),
     path('logout/',auth_views.LogoutView.as_view(template_name='house_app/loggedout.html'),name='logout'),
-    path('addhouse/',views.HouseCreationView.as_view(),name='create_house'),
+    path('addhouse/',views.create_house,name='create_house'),
+    path('addwarehouse/',views.create_warehouse,name='create_warehouse'),
+    path('addland/',views.create_land,name='create_land'),
     path('dashboard/',views.user_dashboard,name='user_dashboard'),
 ]

@@ -15,7 +15,7 @@ class HouseCreationForm(forms.ModelForm):
     class Meta:
         model=House
         fields=['name','location','price','bathrooms','bedrooms',
-                'toilets','sitting_room','swimming_pool']
+                'toilets','sitting_room','swimming_pool','image1']
     
 
 class LandCreationForm(forms.ModelForm):
