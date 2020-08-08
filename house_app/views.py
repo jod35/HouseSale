@@ -44,6 +44,8 @@ def user_dashboard(request):
 
 def create_house(request):
     form=HouseCreationForm()
+    if request.method == 'POST':
+        form=HouseCreationForm(request.POST,request.FILES)
     context={
         'form':form
     }

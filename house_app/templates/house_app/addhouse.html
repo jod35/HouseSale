@@ -3,7 +3,7 @@
 {% block body %}
     <div class="form">
         <h3>Add A House</h3>
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data"
             {% csrf_token %}
             {{ form |crispy}}
             <input type="submit" class="form-btn" value="Save">
