@@ -8,6 +8,10 @@
         {{ form |crispy}}
         <input type="submit" class="form-btn" value="Login">
     </form>
+    <br>
+    <p class="red-text">
+        Do not have an account,<a href="{% url 'appl:register' %}">Sign Up</a>
+    </p>
 </div>
 {% endblock body %}
     

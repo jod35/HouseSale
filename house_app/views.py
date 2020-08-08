@@ -1,11 +1,14 @@
 from django.shortcuts import render,redirect
 from .forms import RegistrationForm
 from django.contrib import messages
+from django.views.generic import CreateView,ListView,UpdateView
+from .models import House, WareHouse,Land
+from .forms import LandCreationForm,WareHouseCreationForm,HouseCreationForm
 
 # Create your views here.
 
 def index(request):
-    return render(request,'house_app/index.html')
+    return render(request,'house_app/index.html',context={'title':"Welcome to HouseSale"})
 
 
 def create_account(request):
@@ -21,10 +24,72 @@ def create_account(request):
 
         
     context={
-        'form':form
+        'form':form,
+        'title':'Create Your Account'
     }
     return render(request,'house_app/signup.html',context)
 
+#dashboard_view
+def user_dashboard(request):
+    houses=House.objects.order_by('-id').all()
+    warehouses=WareHouse.objects.order_by('-id').all()
+    land=Land.objects.order_by('-id').all
+    context={
+        'houses':houses,
+        'warehouses':warehouses,
+        'land':land,
+        'title':'User Dashboard'
+    }
+    return render(request,'house_app/dashboard.html',context)
 
-def login(request):
-    return render(request,'house_app/login.html')
+#view for creating a house
+
+def create_house(request):
+    form=HouseCreationForm()
+    if request.method == 'POST':
+        form=HouseCreationForm(request.POST,request.FILES)
+
+        if form.is_valid():
+            obj=form.save(commit=False)
+
+            obj.dealer=request.user
+
+            obj.save()
+
+            messages.success(request,"House has been created successfully")
+
+            return redirect('/dashboard/')
+
+    context={
+        'form':form,
+        'title':"Create A House"
+    }
+    return render(request,'house_app/addhouse.html',context)
+
+#view for showing houses
+def house_admin(request):
+    houses=House.objects.filter(dealer=request.user).all()
+    context={
+        'title':"House Admin",
+        'houses':houses
+    }
+    return render(request,'house_app/houses.html',context)
+#view for creating a warehouse
+def create_warehouse(request):
+    form=WareHouseCreationForm()
+    context={
+        'form':form
+    }
+    return render(request,'house_app/addwarehouse.html',context)
+
+
+#view for creating a land deal
+def create_land(request):
+    form=LandCreationForm()
+    context={
+        'form':form
+    }
+
+    return render(request,'house_app/addland.html',context)
+    
+
