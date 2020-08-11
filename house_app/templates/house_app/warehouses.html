@@ -17,6 +17,7 @@
                 <th>Description</th>
                 <th>Location </th>
                 <th>Price (UGX)</th>
+                <th>Space (sq metres)</th>
 
             </thead>
             <tbody>
@@ -28,6 +29,7 @@
                         </td>
                         <td>{{warehouse.location}}</td>
                         <td>{{warehouse.format_price}}</td>
+                        <td>{{ warehouse.space }}</td>
                     </tr>                    
                 {% endfor %}
                     
