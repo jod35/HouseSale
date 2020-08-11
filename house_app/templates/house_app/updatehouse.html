@@ -1,0 +1,13 @@
+{% extends 'house_app/base.html' %}
+{% load crispy_forms_tags %}
+{% block body %}
+<div class="form">
+    <h3>Update House</h3>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form |crispy}}
+        <input type="submit" class="form-btn" value="Update"> <a href="/delete_house/{{house.id}}" class="form-btn btn-danger">Delete</a>
+    </form>
+</div>
+{% endblock body %}
+    

@@ -1,0 +1,1 @@
+web gunicorn housesale.wsgi --log-file -

@@ -1,6 +1,13 @@
 {% extends 'house_app/base.html' %}
 {% block body %}
     <div class="container">
+        {% if messages %}
+        {% for message in message %}
+            <center>
+                 <p class="alert alert-{{message.tags}}">{{message}}</p>
+            </center>
+        {% endfor %}
+        {% endif %}
         <h1 class="red-text">{{request.user}} |House Admin</h1>
         <a href="{% url 'appl:create_house' %}" class="add-btn">&plus; Add House</a>
         <hr>
@@ -18,7 +25,9 @@
                 
                 {% for house in houses %}
                     <tr>
-                        <td>{{house.name}}</td>
+                       <td> 
+                           <a href="/update_house/{{house.pk}}">{{house.name}}</a>
+                        </td>
                         <td>{{house.location}}</td>
                         <td>{{house.format_price}}</td>
                         <td>{{house.bedrooms}}</td>

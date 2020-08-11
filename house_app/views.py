@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from .forms import RegistrationForm
 from django.contrib import messages
-from django.views.generic import CreateView,ListView,UpdateView
+from django.views.generic import CreateView,ListView,UpdateView,DeleteView
 from .models import House, WareHouse,Land
 from .forms import LandCreationForm,WareHouseCreationForm,HouseCreationForm
 
@@ -74,6 +74,26 @@ def house_admin(request):
         'houses':houses
     }
     return render(request,'house_app/houses.html',context)
+
+class HouseUpdateView(UpdateView):
+    model=House
+    fields=['name','location','price','bathrooms','bedrooms','toilets','sitting_room','swimming_pool','image1']
+    template_name='house_app/updatehouse.html'
+    success_url='/view_houses'
+    context_object_name='house'
+
+def delete_house(request,id):
+    house=House.objects.get(id=id)
+
+    if request.method == 'POST':
+        house.delete()
+        messages.success(request,"House Deleted Successfully")
+        return redirect('/view_houses/')
+    context={
+        'house':house
+    }
+    return render(request,'house_app/deletehouse.html',context)
+
 #view for creating a warehouse
 def create_warehouse(request):
     form=WareHouseCreationForm()
@@ -93,3 +113,5 @@ def create_land(request):
     return render(request,'house_app/addland.html',context)
     
 
+
+    
