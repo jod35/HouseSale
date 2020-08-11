@@ -1,13 +1,10 @@
 {% extends 'house_app/base.html' %}
 {% block body %}
     <div class="container">
-        {% if messages %}
-        {% for message in message %}
-            <center>
-                 <p class="alert alert-{{message.tags}}">{{message}}</p>
-            </center>
+  
+        {% for message in messages %}
+                <li class="alert alert-{{message.tags}}">{{ message }}</li>
         {% endfor %}
-        {% endif %}
         <h1 class="red-text">{{request.user}} |warehouse Admin</h1>
         <a href="{% url 'appl:create_warehouse' %}" class="add-btn">&plus; Add warehouse</a>
         <hr>

@@ -128,6 +128,8 @@ def create_warehouse(request):
 
             obj.save()
 
+            messages.success(request,"Warehouse Added Successfully")
+
             return redirect('/view_warehouses/')
 
 

@@ -2,11 +2,11 @@
 {% block body %}
     <div class="container">
         {% if messages %}
-        {% for message in message %}
-            <center>
-                 <p class="alert alert-{{message.tags}}">{{message}}</p>
-            </center>
-        {% endfor %}
+                
+            {% for message in messages %}
+                <li class="alert alert-{{message.tags}}">{{ message }}</li>
+            {% endfor %}
+            
         {% endif %}
         <h1 class="red-text">{{request.user}} |House Admin</h1>
         <a href="{% url 'appl:create_house' %}" class="add-btn">&plus; Add House</a>
