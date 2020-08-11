@@ -15,6 +15,7 @@ urlpatterns = [
     path('addland/',views.create_land,name='create_land'),
     path('update_house/<pk>/',views.HouseUpdateView.as_view(),name='update_house'),
     path('delete_house/<id>/',views.delete_house,name='delete_house'),
+    path('view_warehouses/',views.view_warehouses,name='view_warehouses'),
     path('dashboard/',views.user_dashboard,name='user_dashboard'),
 
 ]

@@ -96,22 +96,49 @@ def delete_house(request,id):
 
 #view for creating a warehouse
 def create_warehouse(request):
+
     form=WareHouseCreationForm()
+
+    if request.method == 'POST':
+
+        form = WareHouseCreationForm(request.POST)
+
+        if form.is_valid():
+
+            obj = form.save(commit=False)
+
+            obj.dealer = request.user
+
+            obj.save()
+
+            return redirect('/view_warehouses/')
+
+
     context={
         'form':form
     }
     return render(request,'house_app/addwarehouse.html',context)
 
+#list view for warehouses
+def view_warehouses(request):
+    warehouses = WareHouse.objects.filter(dealer=request.user).all()
+    context={
+        "title" : "Warehouse Admin",
+        "warehouses" : warehouses
+    }
+    return render(request,'house_app/warehouses.html',context)
+
 
 #view for creating a land deal
 def create_land(request):
     form=LandCreationForm()
-    context={
+    context = {
         'form':form
     }
 
     return render(request,'house_app/addland.html',context)
     
+
 
 
     
