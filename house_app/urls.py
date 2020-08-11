@@ -17,6 +17,7 @@ urlpatterns = [
     path('delete_house/<id>/' , views.delete_house , name = 'delete_house') , 
     path('view_warehouses/' , views.view_warehouses , name = 'view_warehouses') , 
     path('update_warehouse/<pk>' , views.WareHouseUpdateView.as_view() , name = 'update_warehouse') , 
+    path('delete_warehouse/<id>/' , views.delete_warehouse , name = 'delete_warehouse') ,
     path('dashboard/' , views.user_dashboard , name = 'user_dashboard') , 
 
 ]

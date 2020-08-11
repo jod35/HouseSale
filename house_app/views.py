@@ -92,6 +92,7 @@ class HouseUpdateView(UpdateView):
     
     context_object_name = 'house'
 
+#view for deleting a house
 def delete_house(request,id):
 
     house = House.objects.get(id=id)
@@ -157,7 +158,29 @@ class WareHouseUpdateView(UpdateView):
 
     template_name = 'house_app/updatewarehouse.html'
 
+    context_object_name='warehouse'
 
+#delete a warehouse
+
+#view
+def delete_warehouse(request,id):
+
+    warehouse = WareHouse.objects.get(id=id)
+
+    if request.method == 'POST':
+
+        warehouse.delete()
+        
+        messages.success(request,"Warehouse Deleted Successfully")
+        
+        return redirect('/view_warehouses/')
+    
+    context = {
+        'warehouse' : warehouse,
+        'title' : "Delete Warehouse"
+    }
+    
+    return render(request,'house_app/deletehouse.html',context)
 #view for creating a land deal
 def create_land(request):
     form = LandCreationForm()
