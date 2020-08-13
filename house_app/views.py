@@ -63,7 +63,7 @@ def create_house(request):
 
             messages.success(request,"House has been created successfully")
 
-            return redirect('/dashboard/')
+            return redirect('/view_houses/')
 
     context={
         'form':form,
